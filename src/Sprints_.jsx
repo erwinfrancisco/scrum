@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Sprints_(){
   return(
-    <h2>Soy la mera verga calendarizando Sprints</h2>
+    <h2>Cronográma para los Sprints</h2>
   )
 }
 
