@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/scrum.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendarización de los Sprints</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style type="text/css">
+      body{
+        font-family:sans-serif;
+      }
+      #chart_div{
+        text-align:center;
+        margin: auto;
+        width:90%;
+        height:auto;
+      }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['gantt']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function daysToMilliseconds(days) {
+      return days * 24 * 60 * 60 * 1000;
+    }
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'ID');
+      data.addColumn('string', 'Actividad');
+      data.addColumn('date', 'Fecha Inicio');
+      data.addColumn('date', 'Fecha Término´');
+      data.addColumn('number', 'Duración');
+      data.addColumn('number', '% Avance');
+      data.addColumn('string', 'Dependenncias');
+
+      data.addRows([
+        ['Sprint1', 'Sprint #1 - Navegación',
+         new Date(2022, 8, 1), new Date(2022, 8, 6), null,  20,  null],
+        ['Sprint2', 'Sprint #2 - Sección de promociones y servicios',
+         null, new Date(2022, 8, 12), daysToMilliseconds(3), 0, 'Sprint1'],
+        ['Sprint3', 'Sprint #3 - Portafolio de trabajos realizados',
+         null, new Date(2022, 8, 15), daysToMilliseconds(3), 0, 'Sprint2'],
+        ['Sprint4', 'Sprint #4 - Sección de ubicación y contacto',
+         null, new Date(2022, 8, 18), daysToMilliseconds(4), 0, 'Sprint3'],
+        ['Sprint5', 'Sprint #5 - Base de datos de clientes',
+         null, new Date(2022, 8, 22), daysToMilliseconds(4), 0, 'Sprint4']
+      ]);
+
+      var options = {
+        height: 275
+      };
+
+      var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+  </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="chart_div"></div>
+    <script type="module" src="/src/sprints.jsx"></script>
+		
+  </body>
+</html>

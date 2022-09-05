@@ -1,0 +1,73 @@
+.barra-navegacion{
+  width:100%;
+  background-color:black;
+  display:column;
+  align-items:center;
+  text-align:center;
+
+}
+
+.logo-navbar{
+  width:100px;
+  margin-top:15px;
+}
+
+.titulo-navbar, h3{
+  color:white;
+  text-align:center;
+  font-size:1.6em;
+}
+
+.subtitulo-navbar{
+  color:skyblue;
+  text-align:center;
+  font-size:1.2em;
+}
+
+h3{
+  color:white;
+  text-align:center;
+  font-size:1.2em;
+   padding-bottom:15px;
+}
+
+.botones-tab:hover{
+  background-color:aliceblue;
+}
+
+.perra{
+  background-color:green;
+}
+
+.tabla-historia{
+  width:75%;
+  margin:auto;
+  display:flex;
+  align-content:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:50px;
+}
+
+#horas{
+  text-align:center;
+}
+
+td, th{
+  padding-top:10px;
+  padding-left:20px;
+}
+
+th{
+  background-color:lightgray;
+}
+
+.titulo-contenido{
+  margin:30px;
+}
+
+#suma-tabla{
+  text-align:right;
+}
+
+
