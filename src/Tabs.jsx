@@ -8,6 +8,9 @@ function Tabs() {
       <div class="contenido-principal">
         <ul class="nav nav-tabs">
           <li class="nav-item botones-tab">
+            <a class="nav-link" href={"../index.html"}>Inicio</a>
+          </li>
+          <li class="nav-item botones-tab">
             <a class="nav-link" href={"../historias.html"}>Historias de usuario</a>
           </li>
           <li class="nav-item botones-tab">
